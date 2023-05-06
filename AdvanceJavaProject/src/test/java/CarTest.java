@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import mashin.Mashin;
+import khodro.Mashin;
 
 public class CarTest {
     @Test
@@ -10,9 +10,9 @@ public class CarTest {
         Mashin volvo = new Mashin("volvo");
 
         //When
-        boolean ayaHarekatMikonad = benz.ayaMashinDarHalHarekatAst();
+        boolean ayaHarekatMikonad = benz.ayaDarHalHarekatAst();
         volvo.roshan();
-        boolean ayaVolvoHarekadMikonad = volvo.ayaMashinDarHalHarekatAst();
+        boolean ayaVolvoHarekadMikonad = volvo.ayaDarHalHarekatAst();
 
         //Then
         assertFalse(ayaHarekatMikonad);
