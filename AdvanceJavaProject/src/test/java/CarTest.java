@@ -1,3 +1,4 @@
+import khodro.Khodro;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import khodro.Mashin;
@@ -6,8 +7,8 @@ public class CarTest {
     @Test
     void Mashin_Moving_Door_closed_and_Mashin_Roshan() {
         //Given
-        Mashin benz = new Mashin("benz");
-        Mashin volvo = new Mashin("volvo");
+        Khodro benz = new Mashin("benz");
+        Khodro volvo = new Mashin("volvo");
 
         //When
         boolean ayaHarekatMikonad = benz.ayaDarHalHarekatAst();
