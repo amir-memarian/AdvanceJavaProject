@@ -6,4 +6,9 @@ public class Motor extends Khodro{
         return ayaRoshanAst;
     }
 
+    @Override
+    public String getMark() {
+        return "Motor";
+    }
+
 }

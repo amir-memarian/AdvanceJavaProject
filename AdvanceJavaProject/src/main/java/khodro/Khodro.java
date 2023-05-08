@@ -11,4 +11,6 @@ public abstract class Khodro {
     }
 
     public abstract boolean ayaDarHalHarekatAst();
+
+    public abstract String getMark();
 }
