@@ -1,11 +1,11 @@
 package khodro;
 
 public class Mashin extends Khodro implements SandoghDar, GearBox {
-    boolean ayaDarBazAst;
-    String mark;
+    private boolean ayaDarBazAst;
+    private String mark;
     int gonjayeshSandogh;
-    String noeDande;
-    Ranande ranande;
+    private String noeDande;
+    private Ranande ranande;
     public Mashin(){
     }
     public Mashin(String mark){

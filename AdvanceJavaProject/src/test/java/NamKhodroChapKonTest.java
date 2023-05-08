@@ -1,7 +1,4 @@
-import khodro.Khodro;
-import khodro.Mashin;
-import khodro.Motor;
-import khodro.NamKhodroChapKon;
+import khodro.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -20,6 +17,6 @@ public class NamKhodroChapKonTest {
         String listNamKhodro = namKhodroChapKon.execute();
 
         //Then
-        Assertions.assertEquals("Benz-Volvo-Motor-Kashti",listNamKhodro);
+        Assertions.assertEquals("Benz-Volvo-Motor-khodro.Kashti",listNamKhodro);
     }
 }
