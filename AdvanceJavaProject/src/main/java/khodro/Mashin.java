@@ -1,6 +1,8 @@
 package khodro;
 
 public class Mashin extends Khodro implements SandoghDar, GearBox {
+
+    public static int tedadForosh;
     private boolean ayaDarBazAst;
     private String mark;
     int gonjayeshSandogh;
