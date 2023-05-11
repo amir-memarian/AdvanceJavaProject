@@ -3,10 +3,21 @@ package calculator;
 import static java.lang.Double.parseDouble;
 
 public class Calculator {
-    public String add(String adadAval, String adadDovom) {
+    public String calcute(String adadAval, String adadDovom,String operation) {
         double d1 = parseDouble(adadAval);
         double d2 = parseDouble(adadDovom);
-        double result = d1 + d2;
+        double result;
+        if (operation == "+") {
+            result = d1 + d2;
+        } else if (operation == "-") {
+            result = d1 - d2;
+        } else if (operation == "/") {
+            result = d1 / d2;
+        } else if (operation == "x"){
+            result = d1 * d2;
+        } else {
+            result = 0;
+        }
         return String.valueOf(result);
     }
 }
