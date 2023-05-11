@@ -10,7 +10,7 @@ public class CalculatorTest {
     void Bayad_do_adad_ra_ba_ham_jam_konid() {
         Calculator calculator = new Calculator();
 
-        String haselJamDoAdad=calculator.add("5.3" , "-2");
+        String haselJamDoAdad=calculator.calcute("5.3" , "-2","+");
 
         assertEquals("3.3",haselJamDoAdad);
     }
