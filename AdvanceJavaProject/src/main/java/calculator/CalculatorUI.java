@@ -37,13 +37,9 @@ public class CalculatorUI {
         }
 
         jButton[3][2].addActionListener(e -> {
-//            if (operation == "=" || operation.isEmpty()){
-//                jTextField.setText("");
-//            }else {
-                Calculator calculator = new Calculator();
-                String addResult = calculator.calcute(adadAval, jTextField.getText(), oper);
-                jTextField.setText(addResult);
-//            }
+            Calculator calculator = new Calculator();
+            String addResult = calculator.calcute(adadAval, jTextField.getText(), oper);
+            jTextField.setText(addResult);
         });
 
         mashinHesab.setSize(600,600);
