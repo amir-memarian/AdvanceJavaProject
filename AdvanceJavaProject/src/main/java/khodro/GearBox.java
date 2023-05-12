@@ -1,5 +1,7 @@
 package khodro;
 
+import khodro.mashin.Dande;
+
 public interface GearBox {
-    public abstract String typeDande();
+    public abstract Dande typeDande();
 }

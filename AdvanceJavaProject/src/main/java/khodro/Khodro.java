@@ -1,7 +1,11 @@
 package khodro;
 
 public abstract class Khodro {
-    boolean ayaRoshanAst;
+
+    protected final void protectedMethod(){
+        System.out.println("This method is protected.");
+    }
+    public boolean ayaRoshanAst;
 
     public void roshan(){
         ayaRoshanAst = true;
