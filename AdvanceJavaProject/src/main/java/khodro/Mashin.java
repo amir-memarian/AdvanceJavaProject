@@ -48,4 +48,15 @@ public class Mashin extends Khodro implements SandoghDar, GearBox {
     public int gonjayeshSandogh() {
         return 100;
     }
+
+    @Override
+    public String toString() {
+        return "Mashin{" +
+                "ayaDarBazAst=" + ayaDarBazAst +
+                ", mark='" + mark + '\'' +
+                ", gonjayeshSandogh=" + gonjayeshSandogh +
+                ", noeDande='" + noeDande + '\'' +
+                ", ranande=" + ranande +
+                '}';
+    }
 }

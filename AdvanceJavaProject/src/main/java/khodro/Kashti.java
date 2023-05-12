@@ -11,6 +11,12 @@ public class Kashti extends Khodro {
 */
 
     @Override
+    public String toString() {
+        return "Kashti{}";
+//        return super.toString();
+    }
+
+    @Override
     public boolean ayaDarHalHarekatAst() {
         protectedMethod();
         Mashin mashin = new Mashin();
@@ -22,5 +28,13 @@ public class Kashti extends Khodro {
     @Override
     public String getMark() {
         return "khodro.Kashti";
+    }
+
+    public void printRefrence() {
+        System.out.println(this.toString());
+    }
+
+    public void printRefrenceObject(Object object){
+        System.out.println(object);
     }
 }
