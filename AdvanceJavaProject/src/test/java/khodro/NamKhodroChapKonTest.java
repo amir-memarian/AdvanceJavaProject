@@ -1,3 +1,5 @@
+package khodro;
+
 import khodro.*;
 import khodro.mashin.Dande;
 import khodro.mashin.Mashin;

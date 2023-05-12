@@ -1,3 +1,5 @@
+package khodro;
+
 import khodro.Khodro;
 import khodro.mashin.Dande;
 import org.junit.jupiter.api.Test;
