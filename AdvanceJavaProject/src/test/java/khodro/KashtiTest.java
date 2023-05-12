@@ -1,3 +1,5 @@
+package khodro;
+
 import khodro.Khodro;
 import khodro.Kashti;
 
