@@ -1,4 +1,5 @@
-package khodro;
+package khodro.mashin;
+import khodro.*;
 
 public class Mashin extends Khodro implements SandoghDar, GearBox {
 
@@ -6,7 +7,7 @@ public class Mashin extends Khodro implements SandoghDar, GearBox {
     private boolean ayaDarBazAst;
     private String mark;
     int gonjayeshSandogh;
-    private String noeDande;
+    private Dande noeDande;
     private Ranande ranande;
     public Mashin(){
     }
@@ -14,7 +15,7 @@ public class Mashin extends Khodro implements SandoghDar, GearBox {
         this.mark = mark;
     }
 
-    public Mashin(String mark, int gonjayeshSandogh, String noeDande) {
+    public Mashin(String mark, int gonjayeshSandogh, Dande noeDande) {
         this.mark = mark;
         this.gonjayeshSandogh = gonjayeshSandogh;
         this.noeDande = noeDande;
@@ -40,8 +41,8 @@ public class Mashin extends Khodro implements SandoghDar, GearBox {
     }
 
     @Override
-    public String typeDande() {
-        return "Automatic";
+    public Dande typeDande() {
+        return noeDande;
     }
 
     @Override
@@ -52,11 +53,11 @@ public class Mashin extends Khodro implements SandoghDar, GearBox {
     @Override
     public String toString() {
         return "Mashin{" +
-                "ayaDarBazAst=" + ayaDarBazAst +
-                ", mark='" + mark + '\'' +
-                ", gonjayeshSandogh=" + gonjayeshSandogh +
-                ", noeDande='" + noeDande + '\'' +
-                ", ranande=" + ranande +
+                "ayaDarBazAst=" + this.ayaDarBazAst +
+                ", mark='" + this.mark + '\'' +
+                ", gonjayeshSandogh=" + this.gonjayeshSandogh +
+                ", noeDande='" + this.noeDande.getToPersian() + '\'' +
+                ", ranande=" + this.ranande +
                 '}';
     }
 }

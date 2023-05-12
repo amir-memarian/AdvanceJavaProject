@@ -1,6 +1,6 @@
 package khodro;
 
-import khodro.Khodro;
+import khodro.mashin.Mashin;
 
 public class Kashti extends Khodro {
 

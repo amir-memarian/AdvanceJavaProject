@@ -1,7 +1,8 @@
 import khodro.Khodro;
+import khodro.mashin.Dande;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import khodro.Mashin;
+import khodro.mashin.Mashin;
 
 public class CarTest {
     @Test
@@ -18,5 +19,11 @@ public class CarTest {
         //Then
         assertFalse(ayaHarekatMikonad);
         assertTrue(ayaVolvoHarekadMikonad);
+    }
+
+    @Test
+    void Bayad_Print_konad() {
+        Mashin pejo = new Mashin("Pejo",150, Dande.MANUAL);
+        System.out.println(pejo.toString());
     }
 }

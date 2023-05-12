@@ -1,5 +1,5 @@
 import foroshande.Foroshande;
-import khodro.*;
+import khodro.mashin.Mashin;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

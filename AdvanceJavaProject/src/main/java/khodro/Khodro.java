@@ -5,7 +5,7 @@ public abstract class Khodro {
     protected final void protectedMethod(){
         System.out.println("This method is protected.");
     }
-    boolean ayaRoshanAst;
+    public boolean ayaRoshanAst;
 
     public void roshan(){
         ayaRoshanAst = true;
