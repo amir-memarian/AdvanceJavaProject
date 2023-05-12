@@ -1,12 +1,13 @@
 package calculator;
 
-import sun.text.normalizer.UCharacter;
-
 import javax.swing.*;
-import java.awt.*;
 
 public class CalculatorUI {
 
+    public static final int WIDTH = 50;
+    public static final int HEIGHT = 50;
+    public static final int MAXROW = 4;
+    public static final int MAXCOL = 4;
     private static JTextField jTextField;
     private static String adadAval;
     private static String oper;
@@ -14,41 +15,41 @@ public class CalculatorUI {
         JFrame mashinHesab = new JFrame("Mashin Hesab");
 
         jTextField = new JTextField();
-        jTextField.setBounds(0,0,150,50);
+        jTextField.setBounds(0,0,WIDTH*(MAXCOL-1),HEIGHT);
         jTextField.setEditable(false);
 
         JButton cancle = new JButton("C");
-        cancle.setBounds(150,0,50,50);
+        cancle.setBounds(WIDTH*(MAXCOL-1),0,WIDTH,HEIGHT);
         cancle.addActionListener(e -> jTextField.setText(""));   //java 8
 
         mashinHesab.add(jTextField);
         mashinHesab.add(cancle);
 
-        JButton[][] jButton=new JButton[4][4];
+        JButton[][] jButton=new JButton[MAXROW][MAXCOL];
         String[][] label = {{"1","2","3","+"},{"4","5","6","-"},{"7","8","9","x"},{".","0","=","/"}};
-        for(int rowIndex=0;rowIndex < 4;rowIndex++){
-            for(int colIndex=0;colIndex < 4;colIndex++){
-                if ((rowIndex == 3) && (colIndex == 2)){
-                    jButton[rowIndex][colIndex] = getButton(label[rowIndex][colIndex], colIndex * 50, (rowIndex + 1) * 50, "Equal");
+        for(int rowIndex = 0; rowIndex < MAXROW; rowIndex++){
+            for(int colIndex = 0; colIndex < MAXCOL; colIndex++){
+                if ((rowIndex == MAXROW - 1) && (colIndex == MAXCOL - 2)){
+                    jButton[rowIndex][colIndex] = getButton(label[rowIndex][colIndex], colIndex * WIDTH, (rowIndex + 1) * HEIGHT, "Equal");
                 }else {
-                    if (colIndex < 3) {
-                        jButton[rowIndex][colIndex] = getButton(label[rowIndex][colIndex], colIndex * 50, (rowIndex + 1) * 50, "Number");
+                    if (colIndex < MAXCOL - 1) {
+                        jButton[rowIndex][colIndex] = getButton(label[rowIndex][colIndex], colIndex * WIDTH, (rowIndex + 1) * HEIGHT, "Number");
                     } else {
-                        jButton[rowIndex][colIndex] = getButton(label[rowIndex][colIndex], colIndex * 50, (rowIndex + 1) * 50, "Operation");
+                        jButton[rowIndex][colIndex] = getButton(label[rowIndex][colIndex], colIndex * WIDTH, (rowIndex + 1) * HEIGHT, "Operation");
                     }
                 }
                 mashinHesab.add(jButton[rowIndex][colIndex]);
             }
         }
 
-        mashinHesab.setSize(220,300);
+        mashinHesab.setSize(WIDTH*(MAXCOL) + 20,HEIGHT*(MAXROW+2));
         mashinHesab.setLayout(null);
         mashinHesab.setVisible(true);
     }
 
     private static JButton getButton(String lable, int xPosition, int yPosition, String type) {
         JButton point = new JButton(lable);
-        point.setBounds(xPosition, yPosition, 50, 50);
+        point.setBounds(xPosition, yPosition, WIDTH, HEIGHT);
         if (type.equals("Operation")){
             point.addActionListener(event -> {
                     adadAval = jTextField.getText();
@@ -57,13 +58,14 @@ public class CalculatorUI {
             });
         } else if (type.equals("Number")){
             point.addActionListener(event -> {
-                if (jTextField.getText().indexOf(".") == -1) {
+                if ((!point.getText().contains("."))||
+                    (!jTextField.getText().contains("."))&&(point.getText().contains("."))) {
                     jTextField.setText(jTextField.getText() + point.getText());
                 }
             });
         } else {
             point.addActionListener(event -> {
-                Calculator calculator = new Calculator();
+                final Calculator calculator = new Calculator();
                 String addResult = calculator.calcute(adadAval, jTextField.getText(), oper);
                 adadAval = jTextField.getText();
                 jTextField.setText(addResult);
