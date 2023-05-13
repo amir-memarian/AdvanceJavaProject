@@ -1,12 +1,14 @@
 package khodro.mashin;
 import khodro.*;
 
+import java.util.Objects;
+
 public class Mashin extends Khodro implements SandoghDar, GearBox {
 
     public static int tedadForosh;
     private boolean ayaDarBazAst;
     private String mark;
-    int gonjayeshSandogh;
+    private int gonjayeshSandogh;
     private Dande noeDande;
     private Ranande ranande;
     public Mashin(){
@@ -59,5 +61,20 @@ public class Mashin extends Khodro implements SandoghDar, GearBox {
                 ", noeDande='" + this.noeDande.getToPersian() + '\'' +
                 ", ranande=" + this.ranande +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mashin mashin = (Mashin) o;
+        return gonjayeshSandogh == mashin.gonjayeshSandogh
+                && Objects.equals(mark, mashin.mark)
+                && noeDande == mashin.noeDande;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mark, gonjayeshSandogh, noeDande);
     }
 }
