@@ -34,7 +34,6 @@ public class CompareCollectionTest {
         mashinha_2.add(new Mashin("Benz",100, MANUAL));
 
         assertThat(mashinha_1.equals(mashinha_2)).isTrue();
-
     }
 
 }

@@ -3,7 +3,9 @@ import khodro.*;
 
 import java.util.Objects;
 
-public class Mashin extends Khodro implements SandoghDar, GearBox {
+import static khodro.mashin.Dande.MANUAL;
+
+public class Mashin extends Khodro implements SandoghDar, GearBox,Comparable<Mashin> {
 
     public static int tedadForosh;
     private boolean ayaDarBazAst;
@@ -76,5 +78,19 @@ public class Mashin extends Khodro implements SandoghDar, GearBox {
     @Override
     public int hashCode() {
         return Objects.hash(mark, gonjayeshSandogh, noeDande);
+    }
+
+    @Override
+    public int compareTo(Mashin mashinDigar) {
+        int mogayeseBarMabnayeGonjayeshSandogh =
+                Integer.compare(this.gonjayeshSandogh, mashinDigar.gonjayeshSandogh);
+        if (mogayeseBarMabnayeGonjayeshSandogh == 0){
+            if (Objects.equals(this.noeDande, MANUAL)){
+                return  -1;
+            }else{
+                return 1;
+            }
+        }
+        return mogayeseBarMabnayeGonjayeshSandogh;
     }
 }
