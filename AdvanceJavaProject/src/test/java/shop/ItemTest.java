@@ -1,6 +1,5 @@
 package shop;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,12 +9,13 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+//Acceptance Test
 public class ItemTest {
     private ShoppingListService shoppingList;
     private List<Item> itemList;
     @BeforeEach
     void setUp() {
-        shoppingList = new ShoppingListServiceImpl();
+        shoppingList = new ShoppingListServiceImpl(new ShoppingListDAOImplDouble());
         itemList = new LinkedList<>();
     }
 
@@ -55,5 +55,18 @@ public class ItemTest {
         itemList.add(new Item("Orange",7));
 
         assertThrows(ItemQuntityException.class,()-> shoppingList.saveItems(itemList));
+    }
+
+    class ShoppingListDAOImplDouble implements ShoppingListDAO{
+
+        @Override
+        public List<Item> findAllItems() {
+            return null;
+        }
+
+        @Override
+        public void saveItems(List<Item> items) {
+            System.out.println("Save Item of class ShoppingListDAOImplDouble is called");
+        }
     }
 }
